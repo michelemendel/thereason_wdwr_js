@@ -5,7 +5,7 @@ let decodedStr =
   | Some(jsonStr) => D.string(jsonStr)
   | None => ""
   };
-Js.log(decodedStr); /* "two words" */
+Js.log(decodedStr);
 
 /* Compose array decoder with float decoder with partial application */
 let floatArrayDecoder = D.array(D.float);
@@ -26,9 +26,10 @@ type statsRecord = {
   totals: array(int),
 };
 
-let objStats = {js|{"title": "color",
-  "choices": ["White", "Blue", "Red", "Green", "Brown"],
-  "totals": [118, 114, 73, 67,28]}
+let objStats = {js|{
+    "title": "color",
+    "choices": ["White", "Blue", "Red", "Green", "Brown"],
+    "totals": [118, 114, 73, 67,28]}
 |js};
 
 let colorStats =
